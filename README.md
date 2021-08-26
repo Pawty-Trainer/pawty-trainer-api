@@ -1,4 +1,4 @@
-# Pawty Trainer
+# Pawty Trainer [![Build Status](https://app.travis-ci.com/Pawty-Trainer/pawty-trainer-api.svg?branch=main)](https://app.travis-ci.com/Pawty-Trainer/pawty-trainer-api)
 
 This is the "backend" repository for the Pawty Trainer application. It is responsible for sending api responses to our [frontend application](https://github.com/Pawty-Trainer/pawty-trainer).
 
@@ -31,7 +31,6 @@ your local machine for development and testing purposes.
 ## Important Gems
 Testing
 * [rspec-rails](https://github.com/rspec/rspec-rails)
-* [capybara](https://github.com/teamcapybara/capybara)
 * [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
 * [simplecov](https://github.com/simplecov-ruby/simplecov)
 * [webmock](https://github.com/bblimke/webmock)
@@ -39,9 +38,11 @@ Testing
 * [pry](https://github.com/pry/pry)
 * [factory-bot-rails](https://github.com/thoughtbot/factory_bot_rails)
 * [faker](https://github.com/faker-ruby/faker)
-* [launchy](https://github.com/copiousfreetime/launchy)
+* [bcrypt](https://github.com/bcrypt-ruby/bcrypt-ruby)
+* [byebug](https://github.com/deivid-rodriguez/byebug)
 * [json](https://github.com/flori/json)
 * [jsonapi-serializer](https://github.com/jsonapi-serializer/jsonapi-serializer)
+* [travis](https://github.com/travis-ci/travis.rb)
 
 API Consumption
 * [faraday](https://github.com/lostisland/faraday)
