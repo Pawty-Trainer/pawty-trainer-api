@@ -12,4 +12,5 @@ deploy:
   app: pawty-trainer-api
   run: rails db:migrate
   on: 
+    repo: Pawty-Trainer/pawty-trainer-api
     branch: main
