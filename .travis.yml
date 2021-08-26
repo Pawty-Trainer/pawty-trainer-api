@@ -11,3 +11,6 @@ deploy:
   api_key: SECRET_KEY_BASE
   app: pawty-trainer-api
   run: rails db:migrate
+  on: 
+    branch:
+      main
