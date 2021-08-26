@@ -8,8 +8,10 @@ script:
 - bundle exec rspec
 deploy:
   provider: heroku
-  api_key: heroku_api_key
+  api_key:
+    secure: lbXy2hnnXaIIIIneYErh90Yl0v2yS/aWftRfbDtBRU0jXjZAPCMjttLNA9KrNUIsW/OikkK2RooftpDj9FdrSjAahzZqDdmIRqZ9eSa1sj/9rUgpyG0c9g/lC3FnQeWYaFUM7eoUPiv0NidYnMmNsaXoeSt/a5BOuifU6xudU4ZnwSh+765b9foWHriENFDe3VClOU3W3WYnsPARy/iKq+g55dHpoweCJdqh98RDP0kVsvYR1YPVHoOPDvf+A1vgtr9uclZPGEcZjdAQpqcnCBDmRX88d0Nf6dKu3pOBD/51nIgvldPs0sLXdZgGuOJKUBbS7RLtzW3mXVz6VytwwQJulRkbDTY+47ogY9/+CxuKAl7/bSuk8KmCYblDktRSm3KjmhinCjOclq8y0TUhjOf+ejlYE0f/yFUFJlKAsxiRanrka6AaEi+ArYgKzoR3lrD8nrEp06d/I8ffATFZcJdTS1ItPun70mP3tnqerLra70lEnrefC8MfN0sJTUd/YTc3KTo5n//28udG51gkNw8F1UDXDt66m16FeJYO/An/0BzCgo/u5+4BWl9CB9OXl1mNpIEQOJpEqZ20GH4yADeJdOM190yfhOzvlT4jeV9eKKKI3lyYRG38G6BpwsP8Mt7YAFiCt4Az6H/oCAKEHS9fM2PpolxdqAPsDADAl9E=
   app: pawty-trainer-api
-  run: rails db:migrate
-  on: 
+  on:
+    repo: Pawty-Trainer/pawty-trainer-api
     branch: main
+  skip_cleanup: 'true'
