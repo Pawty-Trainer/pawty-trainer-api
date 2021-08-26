@@ -10,9 +10,9 @@
 # end
 
 5.times do
-    User.create(
-        name: Faker::Movies::StarWars.character,
-        email: Faker::Internet.email,
-        password_digest: Faker::Internet.password
-    )
+    user = Factorybot.create(:user)
+
+    5.times do
+        Factoryboy.create(:dog, user: user)
+    end
 end
