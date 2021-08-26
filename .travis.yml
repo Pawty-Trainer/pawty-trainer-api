@@ -8,9 +8,8 @@ script:
 - bundle exec rspec
 deploy:
   provider: heroku
-  api_key: SECRET_KEY_BASE
+  api_key: $SECRET_KEY_BASE
   app: pawty-trainer-api
   run: rails db:migrate
   on: 
-    repo: Pawty-Trainer/pawty-trainer-api
     branch: main
