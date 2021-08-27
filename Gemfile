@@ -31,6 +31,8 @@ gem 'figaro'
 gem 'json'
 gem 'jsonapi-serializer'
 gem 'graphql'
+gem 'sprockets', '~> 3.7.2'
+# gem 'sprockets'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
@@ -54,8 +56,6 @@ group :development do
 end
 
 group :test do
-  gem 'factory_bot_rails'
-  gem 'faker'
   gem 'vcr'
   gem 'webmock'
 end
