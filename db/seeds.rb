@@ -10,17 +10,17 @@
 # end
 
 5.times do
-    user = User.create(
-        name: Faker::Movies::StarWars.character,
-        email: Faker::Internet.email,
-        password: Faker::Internet.password
-    )
+  user = User.create(
+      name: Faker::Movies::StarWars.character,
+      email: Faker::Internet.email,
+      password: Faker::Internet.password
+  )
 
-    5.times do
-        user.dogs.create(
-            name: Faker::Creature::Dog.name,
-            age: rand(1..24),
-            breed: Faker::Creature::Dog.breed
-        )
-    end
+  5.times do
+      user.dogs.create(
+          name: Faker::Creature::Dog.name,
+          age: rand(1..24),
+          breed: Faker::Creature::Dog.breed
+      )
+  end
 end

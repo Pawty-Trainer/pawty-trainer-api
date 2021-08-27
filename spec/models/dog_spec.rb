@@ -7,4 +7,5 @@ RSpec.describe Dog, type: :model do
   it { should validate_numericality_of(:age) }
 
   it { should belong_to(:user) }
+  it { should have_many(:events) }
 end
