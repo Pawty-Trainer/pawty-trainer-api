@@ -29,5 +29,18 @@ module Types
     def dog(id:)
       Dog.find(id)
     end
+
+    field :events, [Types::EventType], null: false
+    def events
+      Event.all
+    end
+
+    field :event, Types::EventType, null: false do
+      argument :id, ID, required: true
+    end
+
+    def event(id:)
+      Event.find(id)
+    end
   end
 end
