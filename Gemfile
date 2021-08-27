@@ -30,6 +30,7 @@ gem 'bcrypt'
 gem 'figaro'
 gem 'json'
 gem 'jsonapi-serializer'
+gem 'graphql'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
@@ -42,11 +43,14 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'simplecov'
   gem 'shoulda-matchers'
+  gem 'factory_bot_rails'
+  gem 'faker'
 
 end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'graphiql-rails'
 end
 
 group :test do
