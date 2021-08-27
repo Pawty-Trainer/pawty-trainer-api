@@ -1,7 +1,7 @@
 class Mutations::CreateEvent < Mutations::BaseMutation
   argument :name, String, required: true
   argument :completed, Boolean, required: true
-  argument :event_datetime, Datetime, required: true
+  argument :event_datetime, GraphQL::Types::ISO8601DateTime, required: true
   argument :dog_id, Integer, required: true
 
   field :event, Types::EventType, null: false
