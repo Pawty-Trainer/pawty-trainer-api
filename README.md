@@ -7,8 +7,7 @@ This is the "backend" repository for the Pawty Trainer application. It is respon
 Pawty Trainer is an application in which users can organize and schedule training with their puppy. Users can create multiple dogs, see specific breed information, and create scheduled trainings for their dogs.
 
 ### Database Schema
-<!-- upload image here -->
-<img width="400" alt="database schema diagram" src="https://user-images.githubusercontent.com/77904287/131035076-d2ae8a04-aeeb-43cf-8a8f-60239182141e.png">
+![DB Schema](https://user-images.githubusercontent.com/77904287/131035076-d2ae8a04-aeeb-43cf-8a8f-60239182141e.png)
 
 ### Getting Started
 
