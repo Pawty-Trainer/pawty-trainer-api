@@ -32,6 +32,7 @@ gem 'json'
 gem 'jsonapi-serializer'
 gem 'graphql'
 gem 'sprockets', '~> 3.7.2'
+gem 'rack-cors'
 # gem 'sprockets'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
