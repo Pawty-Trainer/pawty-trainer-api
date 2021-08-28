@@ -23,7 +23,7 @@ module Queries
     def query
       <<~GQL
       query {
-        dog(id: ) {
+        dog(id: 1) {
           id
           userId
           name
