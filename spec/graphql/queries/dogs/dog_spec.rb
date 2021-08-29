@@ -11,14 +11,14 @@ module Queries
       it 'returns a dog' do
         post '/graphql', params: { query: query}
 
-        json = JSON.parse(response.body)
-        data = json['data']['dog']
+        json = JSON.parse(response.body, symbolize_names: true)
+        data = json[:data][:dog]
 
-        expect(data).to eq({"age"=>4,
-                            "breed"=>"Poodle",
-                            "id"=> "#{@dog.id}",
-                            "name"=>"Hero",
-                            "userId"=> @user.id})
+        expect(data).to eq({:age=>4,
+                            :breed=>"Poodle",
+                            :id=> "#{@dog.id}",
+                            :name=>"Hero",
+                            :userId=> @user.id})
       end
 
       def query
