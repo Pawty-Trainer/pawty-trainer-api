@@ -1,5 +1,6 @@
 module Types
   class MutationType < Types::BaseObject
+    field :destroy_dog, mutation: Mutations::DestroyDog
     field :create_user, mutation: Mutations::CreateUser
     field :create_dog, mutation: Mutations::CreateDog
     field :create_event, mutation: Mutations::CreateEvent
