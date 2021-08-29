@@ -2,36 +2,38 @@ require 'rails_helper'
 
 module Queries
   RSpec.describe Types::DogType, type: :request do
+    before :each do
+      User.destroy_all
+      @user = create(:user)
+      @dog = create(:dog, user: @user, name: 'Hero', age: 4, breed: 'Poodle')
+    end
     describe '.resolve' do
-      xit 'returns a dog' do
-        user = create(:user)
-        dog = create(:dog, user: user, name: 'Hero', age: 4, breed: 'Poodle')
-
-        post '/graphql', params: { query: query }
+      it 'returns a dog' do
+        post '/graphql', params: { query: query}
 
         json = JSON.parse(response.body)
         data = json['data']['dog']
 
-        expect(data).to eq([{"age"=>4,
+        expect(data).to eq({"age"=>4,
                             "breed"=>"Poodle",
-                            "id"=> dog.id,
+                            "id"=> "#{@dog.id}",
                             "name"=>"Hero",
-                            "userId"=> user.id}])
+                            "userId"=> @user.id})
       end
-    end
 
-    def query
-      <<~GQL
-      query {
-        dog(id: 1) {
-          id
-          userId
-          name
-          breed
-          age
+      def query
+        <<~GQL
+        query {
+          dog(id: "#{@dog.id}") {
+            id
+            userId
+            name
+            breed
+            age
+          }
         }
-      }
-      GQL
+        GQL
+      end
     end
   end
 end
