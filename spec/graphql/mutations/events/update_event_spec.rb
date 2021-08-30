@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 module Mutations
-  module Dogs
-    RSpec.describe UpdateDog, type: :request do
+  module Events
+    RSpec.describe UpdateEvent, type: :request do
       describe '.resolve' do
         before :each do
           User.destroy_all
