@@ -21,7 +21,7 @@ module Mutations
             id: "#{@event.id}",
             name: "run",
             completed: false,
-            eventDatetime: "2001-09-11T06:00:00Z",
+            # eventDatetime: "2001-09-11T06:00:00Z",
             dogId: @dog.id
           })
         end
@@ -34,7 +34,6 @@ module Mutations
              id
              name
              completed
-             eventDatetime
              dogId
             }
            }
