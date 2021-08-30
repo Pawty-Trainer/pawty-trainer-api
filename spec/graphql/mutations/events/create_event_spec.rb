@@ -20,13 +20,13 @@ module Mutations
           json = JSON.parse(response.body, symbolize_names: true)
           data = json[:data][:createEvent][:event]
 
-          expect(data).to eq({
+          expect(data).to include(
             id: Event.last.id.to_s,
             dogId: @dog.id,
             name: 'Potty training',
-            completed: false,
-            eventDatetime: "2021-08-27T06:00:00Z"
-          })
+            completed: false
+          )
+          expect(data[:eventDatetime][0..9]).to eq("2021-08-27")
         end
 
         def query
