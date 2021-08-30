@@ -10,18 +10,6 @@ module Mutations
           @dog = create(:dog, user: @user, name: 'Hero', age: 4, breed: 'Poodle')
         end
 
-        # it 'updates a dog data' do
-        #   dog = create(:dog, user: @user, name: 'Hero', age: 4, breed: 'Poodle')
-        #   post '/graphql', params: { query: query(id: dog.id, user_id: @user.id) }
-        #
-        #   expect(dog.reload).to have_attributes(
-        #     user_id: @user.id,
-        #     name: 'Fido',
-        #     age: 3,
-        #     breed: 'Aussie'
-        #   )
-        # end
-
         xit 'deletes a dog' do
           post '/graphql', params: { query: query(id: @dog.id) }
 
