@@ -15,7 +15,6 @@ module Mutations
           post '/graphql', params: { query: query(id: @event.id) }
 
           json = JSON.parse(response.body, symbolize_names: true)
-          # binding.pry
           data = json[:data][:updateEvent][:event]
 
           expect(data).to eq({
