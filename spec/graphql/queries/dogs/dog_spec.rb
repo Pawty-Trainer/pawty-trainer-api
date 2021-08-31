@@ -18,6 +18,7 @@ module Queries
                             :breed=>"Poodle",
                             :id=> "#{@dog.id}",
                             :name=>"Hero",
+                            :userId=>@user.id,
                             :user=>{
                               :name=>"#{@user.name}"
                             }
@@ -29,6 +30,7 @@ module Queries
         query {
           dog(id: "#{@dog.id}") {
             id
+            userId
             user {
               name
             }

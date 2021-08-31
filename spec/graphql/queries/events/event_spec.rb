@@ -20,10 +20,12 @@ module Queries
                             :completed=>true,
                             :id=>"#{@event1.id}",
                             :eventDatetime=>"2013-01-01T00:00:00Z",
+                            :dogId=>@dog.id,
                             :dog=>{
                               :name=>"#{@dog.name}",
                               :breed=>"#{@dog.breed}",
                               :age=>@dog.age,
+                              :userId=>@user.id,
                               :user=>{
                                 :name=>"#{@user.name}"
                               }
@@ -36,10 +38,12 @@ module Queries
         query {
           event(id: "#{@event1.id}") {
             id
+            dogId
             dog {
               name
               breed
               age
+              userId
               user {
                 name
               }
