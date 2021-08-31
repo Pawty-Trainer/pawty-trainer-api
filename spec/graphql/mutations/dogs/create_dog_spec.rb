@@ -24,7 +24,10 @@ module Mutations
             name: 'Roger',
             breed: 'Poodle',
             age: 9,
-            userId: @user.id
+            user: {
+              id: "#{@user.id}",
+              name: @user.name
+            }
           })
         end
 
@@ -44,7 +47,10 @@ module Mutations
                   name
                   breed
                   age
-                  userId
+                  user {
+                    id
+                    name
+                  }
                 }
               }
             }

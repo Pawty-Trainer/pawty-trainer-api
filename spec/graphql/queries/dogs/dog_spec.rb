@@ -9,7 +9,7 @@ module Queries
     end
     describe '.resolve' do
       it 'returns a dog' do
-        post '/graphql', params: { query: query}
+        post '/graphql', params: { query: query }
 
         json = JSON.parse(response.body, symbolize_names: true)
         data = json[:data][:dog]
@@ -18,7 +18,10 @@ module Queries
                             :breed=>"Poodle",
                             :id=> "#{@dog.id}",
                             :name=>"Hero",
-                            :userId=> @user.id})
+                            :user=>{
+                              :name=>"#{@user.name}"
+                            }
+                          })
       end
 
       def query
@@ -26,7 +29,9 @@ module Queries
         query {
           dog(id: "#{@dog.id}") {
             id
-            userId
+            user {
+              name
+            }
             name
             breed
             age

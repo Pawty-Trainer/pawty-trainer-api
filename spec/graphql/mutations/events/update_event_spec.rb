@@ -22,7 +22,15 @@ module Mutations
             name: "run",
             completed: false,
             # eventDatetime: "2001-09-11T06:00:00Z",
-            dogId: @dog.id
+            dog: {
+              id: "#{@dog.id}",
+              name: "#{@dog.name}",
+              breed: "#{@dog.breed}",
+              age: @dog.age,
+              user: {
+                name: "#{@user.name}"
+              }
+            }
           })
         end
 
@@ -34,7 +42,15 @@ module Mutations
              id
              name
              completed
-             dogId
+             dog {
+               id
+               name
+               breed
+               age
+               user {
+                 name
+               }
+             }
             }
            }
           }

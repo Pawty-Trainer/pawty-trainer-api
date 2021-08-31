@@ -10,19 +10,25 @@ module Queries
 
         post '/graphql', params: { query: query }
 
-        json = JSON.parse(response.body)
-        data = json['data']['dogs']
+        json = JSON.parse(response.body, symbolize_names: true)
+        data = json[:data][:dogs]
 
-        expect(data).to eq([{"age"=>4,
-                            "breed"=>"Poodle",
-                            "id"=>"#{dog1.id}",
-                            "name"=>"Hero",
-                            "userId"=>user.id},
-                            {"age"=>8,
-                            "breed"=>"Poodle",
-                            "id"=>"#{dog2.id}",
-                            "name"=>"Tiger",
-                            "userId"=>user.id}])
+        expect(data).to eq([{:age=>4,
+                            :breed=>"Poodle",
+                            :id=>"#{dog1.id}",
+                            :name=>"Hero",
+                            :user=> {
+                              :name=>"#{user.name}"
+                            }
+                          },
+                            {:age=>8,
+                            :breed=>"Poodle",
+                            :id=>"#{dog2.id}",
+                            :name=>"Tiger",
+                            :user=>{
+                              :name=>"#{user.name}"
+                            }
+                            }])
       end
     end
 
@@ -31,7 +37,9 @@ module Queries
       query {
         dogs {
           id
-          userId
+          user {
+            name
+          }
           name
           breed
           age

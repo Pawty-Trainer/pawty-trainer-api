@@ -22,7 +22,15 @@ module Mutations
 
           expect(data).to include(
             id: Event.last.id.to_s,
-            dogId: @dog.id,
+            dog: {
+              id: "#{@dog.id}",
+              name: "#{@dog.name}",
+              breed: "#{@dog.breed}",
+              age: @dog.age,
+              user: {
+                name: "#{@user.name}"
+              }
+            },
             name: 'Potty training',
             completed: false
           )
@@ -42,7 +50,15 @@ module Mutations
               ) {
                 event {
                   id
-                  dogId
+                  dog {
+                    id
+                    name
+                    breed
+                    age
+                    user {
+                      name
+                    }
+                  }
                   name
                   completed
                   eventDatetime

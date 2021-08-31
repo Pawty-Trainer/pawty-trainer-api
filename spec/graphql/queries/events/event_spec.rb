@@ -13,7 +13,6 @@ module Queries
 
       it 'returns a event' do
         post '/graphql', params: { query: query }
-        # require "pry"; binding.pry
         json = JSON.parse(response.body, symbolize_names: true)
         data = json[:data][:event]
 
@@ -21,7 +20,15 @@ module Queries
                             :completed=>true,
                             :id=>"#{@event1.id}",
                             :eventDatetime=>"2013-01-01T00:00:00Z",
-                            :dogId=> @dog.id})
+                            :dog=>{
+                              :name=>"#{@dog.name}",
+                              :breed=>"#{@dog.breed}",
+                              :age=>@dog.age,
+                              :user=>{
+                                :name=>"#{@user.name}"
+                              }
+                            }
+                          })
       end
 
       def query
@@ -29,7 +36,14 @@ module Queries
         query {
           event(id: "#{@event1.id}") {
             id
-            dogId
+            dog {
+              name
+              breed
+              age
+              user {
+                name
+              }
+            }
             name
             completed
             eventDatetime
