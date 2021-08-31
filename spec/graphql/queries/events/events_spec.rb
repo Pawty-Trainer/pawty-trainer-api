@@ -12,19 +12,35 @@ module Queries
 
         post '/graphql', params: { query: query }
 
-        json = JSON.parse(response.body)
-        data = json['data']['events']
+        json = JSON.parse(response.body, symbolize_names: true)
+        data = json[:data][:events]
 
-        expect(data).to eq([{"name"=>"walk",
-                            "completed"=>true,
-                            "id"=>"#{event1.id}",
-                            "eventDatetime"=>"2013-01-01T00:00:00Z",
-                            "dogId"=>dog.id},
-                            {"name"=>"sit",
-                            "completed"=>false,
-                            "id"=>"#{event2.id}",
-                            "eventDatetime"=>"2021-01-01T00:00:00Z",
-                            "dogId"=>dog.id}])
+        expect(data).to eq([{:name=>"walk",
+                            :completed=>true,
+                            :id=>"#{event1.id}",
+                            :eventDatetime=>"2013-01-01T00:00:00Z",
+                            :dog=>{
+                              :name=>"#{dog.name}",
+                              :breed=>"#{dog.breed}",
+                              :age=>dog.age,
+                              :user=>{
+                                :name=>"#{user.name}"
+                              }
+                            }
+                          },
+                            {:name=>"sit",
+                            :completed=>false,
+                            :id=>"#{event2.id}",
+                            :eventDatetime=>"2021-01-01T00:00:00Z",
+                            :dog=>{
+                              :name=>"#{dog.name}",
+                              :breed=>"#{dog.breed}",
+                              :age=>dog.age,
+                              :user=>{
+                                :name=>"#{user.name}"
+                              }
+                            }
+                          }])
       end
     end
 
@@ -33,7 +49,14 @@ module Queries
       query {
         events {
           id
-          dogId
+          dog {
+            name
+            breed
+            age
+            user {
+              name
+            }
+          }
           name
           completed
           eventDatetime

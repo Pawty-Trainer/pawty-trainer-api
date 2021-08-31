@@ -22,7 +22,9 @@ module Mutations
             name: "Fido",
             breed: "Aussie",
             age: 3,
-            userId: @user.id
+            user: {
+              name: "#{@user.name}"
+            }
           })
         end
 
@@ -32,7 +34,9 @@ module Mutations
             updateDog(input: { id: #{@dog.id}, name: "Fido", age: "3", breed: "Aussie"}) {
               dog {
                   id
-                  userId
+                  user {
+                    name
+                  }
                   name
                   breed
                   age
