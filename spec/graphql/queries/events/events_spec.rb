@@ -19,10 +19,12 @@ module Queries
                             :completed=>true,
                             :id=>"#{event1.id}",
                             :eventDatetime=>"2013-01-01T00:00:00Z",
+                            :dogId=>dog.id,
                             :dog=>{
                               :name=>"#{dog.name}",
                               :breed=>"#{dog.breed}",
                               :age=>dog.age,
+                              :userId=>user.id,
                               :user=>{
                                 :name=>"#{user.name}"
                               }
@@ -32,10 +34,12 @@ module Queries
                             :completed=>false,
                             :id=>"#{event2.id}",
                             :eventDatetime=>"2021-01-01T00:00:00Z",
+                            :dogId=>dog.id,
                             :dog=>{
                               :name=>"#{dog.name}",
                               :breed=>"#{dog.breed}",
                               :age=>dog.age,
+                              :userId=>user.id,
                               :user=>{
                                 :name=>"#{user.name}"
                               }
@@ -49,10 +53,12 @@ module Queries
       query {
         events {
           id
+          dogId
           dog {
             name
             breed
             age
+            userId
             user {
               name
             }

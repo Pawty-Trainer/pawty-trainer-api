@@ -17,6 +17,7 @@ module Queries
                             :breed=>"Poodle",
                             :id=>"#{dog1.id}",
                             :name=>"Hero",
+                            :userId=>user.id,
                             :user=> {
                               :name=>"#{user.name}"
                             }
@@ -25,6 +26,7 @@ module Queries
                             :breed=>"Poodle",
                             :id=>"#{dog2.id}",
                             :name=>"Tiger",
+                            :userId=>user.id,
                             :user=>{
                               :name=>"#{user.name}"
                             }
@@ -37,12 +39,13 @@ module Queries
       query {
         dogs {
           id
-          user {
-            name
-          }
           name
           breed
           age
+          userId
+          user {
+            name
+          }
         }
       }
       GQL
