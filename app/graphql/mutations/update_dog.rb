@@ -14,7 +14,7 @@ class Mutations::UpdateDog < Mutations::BaseMutation
         if dog.update(arguments)
             { success: true, dog: dog, errors: [] }
         else
-            { success: false, dog: nil, errors: record.errors.full_messages }
+            { success: false, dog: nil, errors: dog.errors.full_messages }
         end
     end
 end
