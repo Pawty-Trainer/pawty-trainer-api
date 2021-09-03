@@ -14,7 +14,7 @@ class Mutations::UpdateEvent < Mutations::BaseMutation
         if event.update(arguments)
             { success: true, event: event, errors: [] }
         else
-            { success: false, event: nil, errors: record.errors.full_messages }
+            { success: false, event: nil, errors: event.errors.full_messages }
         end
     end
 end
