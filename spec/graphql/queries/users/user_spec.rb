@@ -8,27 +8,51 @@ module Queries
         @user = create(:user, name: 'Tester')
       end
 
-      it 'returns a user' do
-        post '/graphql', params: { query: query }
+      context 'returns a user based on id successfully' do
+        it 'returns a user' do
+          post '/graphql', params: { query: query }
 
-        json = JSON.parse(response.body, symbolize_names: true)
-        data = json[:data][:user]
+          json = JSON.parse(response.body, symbolize_names: true)
+          data = json[:data][:user]
 
-        expect(data).to eq({
-                            :id=>"#{@user.id}",
-                            :name=>"Tester"})
+          expect(data).to eq({
+                              :id=>"#{@user.id}",
+                              :name=>"Tester"})
+        end
+
+        def query
+          <<~GQL
+          query {
+            user(id: "#{@user.id}") {
+              id
+              name
+            }
+          }
+          GQL
+        end
       end
-    end
 
-    def query
-      <<~GQL
-      query {
-        user(id: "#{@user.id}") {
-          id
-          name
-        }
-      }
-      GQL
+      context 'returns an error' do
+        it 'returns an error when id does not exist' do
+          post '/graphql', params: { query: query }
+
+          json = JSON.parse(response.body, symbolize_names: true)
+          error = json[:errors].first[:message]
+
+          expect(error).to eq("Couldn't find User")
+        end
+
+        def query
+          <<~GQL
+          query {
+            user(id: "10000") {
+              id
+              name
+            }
+          }
+          GQL
+        end
+      end
     end
   end
 end
