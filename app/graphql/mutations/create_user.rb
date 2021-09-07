@@ -12,10 +12,7 @@ class Mutations::CreateUser < Mutations::BaseMutation
         errors: []
       }
     else
-      {
-        user: nil,
-        errors: user.errors.full_messages
-      }
+      raise GraphQL::ExecutionError, user.errors.full_messages.to_sentence
     end
   end
 end

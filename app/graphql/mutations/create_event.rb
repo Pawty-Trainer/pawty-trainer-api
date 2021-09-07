@@ -15,10 +15,7 @@ class Mutations::CreateEvent < Mutations::BaseMutation
         errors: []
       }
     else
-      {
-        event: nil,
-        errors: event.errors.full_messages
-      }
+      raise GraphQL::ExecutionError, event.errors.full_messages.to_sentence
     end
   end
 end

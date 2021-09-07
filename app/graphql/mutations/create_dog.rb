@@ -15,10 +15,7 @@ class Mutations::CreateDog < Mutations::BaseMutation
         errors: []
       }
     else
-      {
-        dog: nil,
-        errors: dog.errors.full_messages
-      }
+      raise GraphQL::ExecutionError, dog.errors.full_messages.to_sentence
     end
   end
 end
