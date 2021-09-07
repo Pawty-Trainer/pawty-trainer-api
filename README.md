@@ -56,9 +56,14 @@ See our app in action [here](https://pawty-trainer-api.herokuapp.com/)
 
 ## Authors
 ### Backend
-- Emmy Morris - [emmymorris](https://github.com/EmmyMorris)
-- Kon Ham - [kon-ham](https://github.com/kon-ham)
-- Mark Yen - [markcyen](https://github.com/markcyen)
+|Developer     |GitHub Handle                               |LinkedIn                                                     |
+|:---          |:---                                        |:---                                                         |
+|Emmy Morris   |[emmymorris](https://github.com/EmmyMorris) |[Emmy's LinkedIn](https://www.linkedin.com/in/emmymorris/)   |
+|Kon Ham       |[kon-ham](https://github.com/kon-ham)       |[Kon's LinkedIn](https://www.linkedin.com/in/kon-ham/)       |
+|Mark Yen      |[markcyen](https://github.com/markcyen)     |[Mark's LinkedIn](https://www.linkedin.com/in/markcyen/)     |
+
 ### Frontend
-- Alex Kio - [alexmkio](https://github.com/alexmkio)
-- Sydney Bear - [sydnerd](https://github.com/sydnerd)
+|Developer     |GitHub Handle                               |LinkedIn                                                     |
+|:---          |:---                                        |:---                                                         |
+|Alex Kio      |[alexmkio](https://github.com/alexmkio)     |[Alex's LinkedIn](https://www.linkedin.com/in/alexkio/)      |
+|Sydney Bear   |[sydnerd](https://github.com/sydnerd)       |[Sydney's LinkedIn](https://www.linkedin.com/in/sydneybear/) |
