@@ -1,39 +1,69 @@
+
 # Pawty Trainer [![Build Status](https://app.travis-ci.com/Pawty-Trainer/pawty-trainer-api.svg?branch=main)](https://app.travis-ci.com/Pawty-Trainer/pawty-trainer-api)
+
+  
+![Ruby](https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white)
+![GraphQL](https://img.shields.io/badge/GraphQl-E10098?style=for-the-badge&logo=graphql&logoColor=white)
+![Rails](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
+![Travis](https://img.shields.io/badge/travis_CI-3EAAAF?style=for-the-badge&logo=travisci&logoColor=white)
 
 This is the "backend" repository for the Pawty Trainer application. It is responsible for sending api responses to our [frontend application](https://github.com/Pawty-Trainer/pawty-trainer).
 
-### About this Project
 
-Pawty Trainer is an application in which users can organize and schedule training with their puppy. Users can create multiple dogs, see specific breed information, and create scheduled trainings for their dogs.
+## About this Project
+
+Pawty Trainer is an application in which users can schedule training for their puppy. Users can add dogs to their pack, and create trainings for each dog. A user receives a reward ("★") for completing their first training, and then for every third training after that.
+
+## Table of Contents
+
+- [Database Schema](#database-schema)
+- [How to use the app](#how-to-use-the-app)
+- [About the app](#about-the-app)
+- [Learning Goals](#learning-goals)
+- [Contributors](#contributors)
+- [Future Additions](#future-additions--reflections)
 
 ### Database Schema
 ![DB Schema](https://user-images.githubusercontent.com/77904287/131035076-d2ae8a04-aeeb-43cf-8a8f-60239182141e.png)
 
-### Getting Started
 
-These instructions will give you a copy of the project up and running on
-your local machine for development and testing purposes.
 
-## Local Setup
+## How to use the app
+### Deployment
+
+#### [View Our App Here!](https://pawty-trainer.github.io/pawty-trainer/)
+
+### Local Installation
 
 1. Fork and Clone the repo
 2. Install gem packages: `bundle install`
 3. Setup the database: `rails db:create`
 4. Run migrations: ` rails db:migrate`
 
-## Versions
+
+### Running the tests
+
+- Run `bundle exec rspec` to run the test suite
+
+- To see a coverage report enter `$ open coverage/index.html`
+- SimpleCov test coverage is at 100.00%:
+
+<img alt="Pawty Trainer Test Coverage" src="https://user-images.githubusercontent.com/77904287/132581055-86a4bf90-3598-4b4e-98cf-217c1e66faa5.png">
+
+## About the app
+### Versions
 
 - Ruby 2.7.2
-
 - Rails 5.2.6
 
-## Important Gems
-Testing
+### Important Gems
+
 * [rspec-rails](https://github.com/rspec/rspec-rails)
 * [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
 * [simplecov](https://github.com/simplecov-ruby/simplecov)
 * [webmock](https://github.com/bblimke/webmock)
-* [vcr](https://github.com/vcr/vcr)
 * [pry](https://github.com/pry/pry)
 * [factory-bot-rails](https://github.com/thoughtbot/factory_bot_rails)
 * [faker](https://github.com/faker-ruby/faker)
@@ -43,27 +73,61 @@ Testing
 * [jsonapi-serializer](https://github.com/jsonapi-serializer/jsonapi-serializer)
 * [travis](https://github.com/travis-ci/travis.rb)
 
-API Consumption
-* [faraday](https://github.com/lostisland/faraday)
-* [figaro](https://github.com/laserlemon/figaro)
-## Running the tests
 
-Run `bundle exec rspec` to run the test suite
+## Learning Goals
 
-## Deployment
+- Work with a frontend team to build out a fullstack application
+- Use continuous integration tools to build and automate the testing and deployment of the application
+- Utilize a Git Rebase workflow
+- Use an agile process to turn well defined requirements into deployed and production ready software
+- Utilize GraphQL
 
-See our app in action [here](https://pawty-trainer-api.herokuapp.com/)
-
-## Authors
-### Backend
-|Developer     |GitHub Handle                               |LinkedIn                                                     |
-|:---          |:---                                        |:---                                                         |
-|Emmy Morris   |[emmymorris](https://github.com/EmmyMorris) |[Emmy's LinkedIn](https://www.linkedin.com/in/emmymorris/)   |
-|Kon Ham       |[kon-ham](https://github.com/kon-ham)       |[Kon's LinkedIn](https://www.linkedin.com/in/kon-ham/)       |
-|Mark Yen      |[markcyen](https://github.com/markcyen)     |[Mark's LinkedIn](https://www.linkedin.com/in/markcyen/)     |
-
+## Contributors
 ### Frontend
-|Developer     |GitHub Handle                               |LinkedIn                                                     |
-|:---          |:---                                        |:---                                                         |
-|Alex Kio      |[alexmkio](https://github.com/alexmkio)     |[Alex's LinkedIn](https://www.linkedin.com/in/alexkio/)      |
-|Sydney Bear   |[sydnerd](https://github.com/sydnerd)       |[Sydney's LinkedIn](https://www.linkedin.com/in/sydneybear/) |
+<table>
+  <tr>
+    <td align="center" > Sydney Bear</td>
+    <td align="center"> Alex Kio</td>
+  </tr>
+  <tr>
+    <td align="center" > <a href="https://github.com/sydnerd">GitHub</td>
+    <td align="center"> <a href="https://github.com/alexmkio">GitHub</td>
+  </tr>
+    <tr>
+    <td align="center" > <a href="https://www.linkedin.com/in/sydneybear/">LinkedIn</td>
+    <td align="center"> <a href="https://www.linkedin.com/in/alexkio/">LinkedIn</td>
+  </tr>
+    <td><img src="https://avatars.githubusercontent.com/u/78241098?v=4" alt='Portrait photo of Sydney' width="150" height="auto" /></td>
+    <td><img src="https://avatars.githubusercontent.com/u/12686237?v=4" alt="Portrait photo of Alex" width="150" height="auto" /></td>
+</table>
+
+### Backend
+<table>
+   <tr>
+    <td align="center" > Emmy Morris</td>
+    <td align="center"> Kon Ham </td>
+    <td align="center"> Mark Yen </td>
+  </tr>
+  <tr>
+    <td align="center" > <a href="https://github.com/EmmyMorris">GitHub</td>
+    <td align="center"> <a href="https://github.com/kon-ham">GitHub </td>
+    <td align="center"> <a href="https://github.com/markcyen">GitHub</td>
+  </tr>
+    <tr>
+    <td align="center" > <a href="https://www.linkedin.com/in/emmymorris/">LinkedIn</td>
+    <td align="center"> <a href="https://www.linkedin.com/in/kon-ham/">LinkedIn</td>
+    <td align="center"> <a href="https://www.linkedin.com/in/markcyen/">LinkedIn</td>
+  </tr>
+    <td><img src="https://avatars.githubusercontent.com/u/77904287?v=4" alt='Portrait photo of Emmy' width="150" height="auto" /></td>
+    <td><img src="https://avatars.githubusercontent.com/u/72781879?v=4" alt="Portrait photo of Kon" width="150" height="auto" /></td>
+    <td><img src="https://avatars.githubusercontent.com/u/77414433?v=4" alt="Portrait photo of Mark" width="150" height="auto" /></td>
+</table>
+
+
+## Future Additions & Reflections
+
+There are so many ways to improve this site. Some major priorities include:
+
+1. Add user authentication (signup, login)
+2. Add an alert for the user to see when they've received a new reward
+3. More robust loading and error pages
