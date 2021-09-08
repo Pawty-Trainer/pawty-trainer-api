@@ -74,7 +74,7 @@ module Mutations
             errors = json[:errors].first
 
             expect(json[:event]).to eq(nil)
-            expect(errors[:message]).to eq("Cannot return null for non-nullable field CreateEventPayload.event")
+            expect(errors[:message]).to eq("Name can't be blank")
           end
 
           def query_error

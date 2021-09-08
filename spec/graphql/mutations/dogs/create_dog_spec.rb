@@ -61,7 +61,7 @@ module Mutations
             errors = json[:errors].first
 
             expect(json[:dog]).to eq(nil)
-            expect(errors[:message]).to eq("Cannot return null for non-nullable field CreateDogPayload.dog")
+            expect(errors[:message]).to eq("Name can't be blank")
           end
 
           def query_error

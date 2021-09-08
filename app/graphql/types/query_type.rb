@@ -14,7 +14,11 @@ module Types
     end
 
     def user(id:)
-      User.find(id)
+      begin
+        User.find(id)
+      rescue ActiveRecord::RecordNotFound => error
+        raise GraphQL::ExecutionError, error.message.split(' with').first
+      end
     end
 
     field :dogs, [Types::DogType], null: false
@@ -27,7 +31,11 @@ module Types
     end
 
     def dog(id:)
-      Dog.find(id)
+      begin
+        Dog.find(id)
+      rescue ActiveRecord::RecordNotFound => error
+        raise GraphQL::ExecutionError, error.message.split(' with').first
+      end
     end
 
     field :events, [Types::EventType], null: false
@@ -40,7 +48,11 @@ module Types
     end
 
     def event(id:)
-      Event.find(id)
+      begin
+        Event.find(id)
+      rescue ActiveRecord::RecordNotFound => error
+        raise GraphQL::ExecutionError, error.message.split(' with').first
+      end
     end
   end
 end
