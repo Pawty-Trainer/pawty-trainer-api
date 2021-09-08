@@ -16,7 +16,7 @@
 # end
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins '*'
+    origins 'localhost:3000', 'pawty-trainer.github.io/pawty-trainer'
     resource '*', headers: :any, methods: [:get, :post, :patch, :put]
   end
 end
